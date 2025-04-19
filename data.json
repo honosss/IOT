@@ -1,0 +1,34 @@
+{
+    "Type":"Tech09",
+    "Device_id":"MA260283",
+    "Time":"20250414200630",
+    "Data":[
+    {"STA":"TRAM01", "CN":"NAME-A00", "V":"273.39", "U":"UNIT-VAL", "St":"00"},
+    {"STA":"TRAM02", "CN":"NAME-A01", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM09", "CN":"NAME-A02", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM04", "CN":"NAME-A03", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM05", "CN":"NAME-A04", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM06", "CN":"NAME-A05", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM07", "CN":"NAME-A06", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM08", "CN":"NAME-A07", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M00", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M01", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M02", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M03", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M04", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M05", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M06", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M07", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M08", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M09", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M10", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M11", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M12", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M13", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM03", "CN":"NAME-M14", "V":"0.00", "U":"UNIT-VAL", "St":"02"},
+    {"STA":"TRAM01", "CN":"VBAT", "V":"11.77", "U":"V", "St":"00"},
+    {"STA":"TRAM01", "CN":"FTP1", "V":"1.00", "U":"STS", "St":"00"}
+    ]
+    }
+   
+   
