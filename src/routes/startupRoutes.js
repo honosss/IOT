@@ -1,5 +1,5 @@
 const express = require('express');
-const { handleStartupMessage } = require('../../controllers/startupController');
+const { handleStartupMessage } = require('../controllers/startupController');
 
 const router = express.Router();
 
