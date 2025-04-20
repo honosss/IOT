@@ -2,3 +2,4 @@
 node_modules/
 # Bỏ qua tệp môi trường
 .env
+logs/
