@@ -31,7 +31,6 @@ function convertData(data) {
             timestamp = new Date(year, month - 1, day, hours, minutes, second);
         }
       //console.log("🚀 data1:", data.Data[0].STA);
-      //console.log("🚀 data1:", data.Data[0]);
         // Xử lý dữ liệu multi-satiation "G1", G2", "G3"..v..
         if (data.Data[0].STA === undefined) {
             //console.log("🚀 data222:", data.Data[0].STA);
