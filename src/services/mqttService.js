@@ -49,6 +49,18 @@ function start() {
                     }
                 })();
                 break;
+                case 'SYS/RESET':
+                    (async () => {
+                        try {
+                            const data = JSON.parse(dataString);
+                            await updateReset(data); // Cập nhật hoặc thêm mới
+                            await saveReset(data);   // Lưu vào collection riêng
+                            logger.info(`✅ Processed SYS/RESET for DeviceId: ${data.DeviceId}`);
+                        } catch (err) {
+                            logger.error(`❌ Error processing SYS/RESET: ${err}`);
+                        }
+                    })();
+                    break;
             default:
                 logger.warn(`Unhandled - topic: ${topic}`);
         }

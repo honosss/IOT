@@ -4,3 +4,4 @@ node_modules/
 .env
 # Bỏ qua log files
 logs/
+test/
