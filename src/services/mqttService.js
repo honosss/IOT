@@ -30,10 +30,10 @@ function start() {
                 handleDiMessage({ body: dataString }, { status: () => ({ json: console.log }) });
             }
             
-            // else if (topic === 'SYS/STARTUP') {
+            else if (topic === 'SYS/STARTUP') {
 
-            //     await handleStartupMessage({ body: dataString }, { status: () => ({ json: console.log }) });
-            // }
+                await handleStartupMessage({ body: dataString }, { status: () => ({ json: console.log }) });
+            }
         } catch (err) {
             console.error(`❌ Error processing message on topic ${topic}:`, err);
         }
