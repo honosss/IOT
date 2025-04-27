@@ -3,6 +3,9 @@ require('dotenv').config()
 const { handleAidata } = require('../controllers/AiController');
 const { handleStartupMessage } = require('../controllers/startupController');
 const { handleDiMessage } = require('../controllers/DiController');
+const { updateReset, saveReset } = require('../models/resetModel');
+const { updateDisconnect, saveDisconnect } = require('../models/disconnectModel'); 
+const {gettime} = require('../controllers/gettime');
 const logger = require('../utils/logger');
 
 const client = mqtt.connect(process.env.MQTT_BROKER, {
@@ -44,6 +47,8 @@ function start() {
                 (async () => {
                     try {
                         await handleStartupMessage({ body: dataString }, { status: () => ({ json: console.log }) });
+                        await gettime(dataString); // Gọi hàm gettime với dataString
+                        logger.info(`✅ Processed SYS/STARTUP for DeviceId: ${dataString}`);
                     } catch (err) {
                         logger.error(`❌ Error processing message on ${topic}: ${err}`);
                     }
@@ -61,6 +66,18 @@ function start() {
                         }
                     })();
                     break;
+                    case 'SYS/DISCONCT':
+                        (async () => {
+                            try {
+                                const data = JSON.parse(dataString);
+                                await updateDisconnect(data); // Cập nhật hoặc thêm mới
+                                await saveDisconnect(data);   // Lưu vào collection riêng
+                                logger.info(`✅ Processed SYS/DISCONCT for DeviceId: ${data.DeviceId}`);
+                            } catch (err) {
+                                logger.error(`❌ Error processing SYS/DISCONCT: ${err}`);
+                            }
+                        })();
+                        break;    
             default:
                 logger.warn(`Unhandled - topic: ${topic}`);
         }

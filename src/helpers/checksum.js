@@ -14,7 +14,7 @@ function checkSum(str) {
     return crc;
 }
 
-let string ='$03,00000000,00000000000000000000000000000000#'
-let chec = checkSum(string);
-console.log(chec); // 0a
+// let string ='$CMD05,TTTTTT,TIME,20250427,154416#'
+// let chec = checkSum(string);
+// console.log(chec); // 0a
 module.exports = {checkSum};
