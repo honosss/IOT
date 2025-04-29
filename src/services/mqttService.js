@@ -3,6 +3,7 @@ require('dotenv').config()
 const { handleAidata } = require('../controllers/AiController');
 const { handleStartupMessage } = require('../controllers/startupController');
 const { handleDiMessage } = require('../controllers/DiController');
+const { handleDoMessage } = require('../controllers/DoController');
 const { updateReset, saveReset } = require('../models/resetModel');
 const { updateDisconnect, saveDisconnect } = require('../models/disconnectModel'); 
 const {gettime} = require('../controllers/gettime');
@@ -16,7 +17,7 @@ const client = mqtt.connect(process.env.MQTT_BROKER, {
 function start() {
     client.on('connect', () => {
         logger.info('✅ Connected to MQTT broker');
-        client.subscribe(['SYS/AI_DATA', 'SYS/DI_DATA', 'SYS/STARTUP']);
+        client.subscribe(['SYS/AI_DATA', 'SYS/DI_DATA', 'SYS/DO_DATA', 'SYS/STARTUP']);
     });
 
     client.on('message', (topic, message) => {
@@ -43,6 +44,15 @@ function start() {
                     }
                 })();
                 break;
+                case 'SYS/DO_DATA':
+                    (async () => {
+                        try {
+                            await handleDoMessage({ body: dataString }, { status: () => ({ json: console.log }) });
+                        } catch (err) {
+                            logger.error(`❌ Error processing message on ${topic}: ${err}`);
+                        }
+                    })();
+                    break;
             case 'SYS/STARTUP':
                 (async () => {
                     try {
